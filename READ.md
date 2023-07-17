@@ -5,5 +5,3 @@
 # to run on the server
 
 Command is : parcel src/index.html
-
-[![React][React.js]][React-url]
