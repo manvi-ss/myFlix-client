@@ -2,27 +2,54 @@ export const MovieView = ({movie, onBackClick}) => {
     return(
         <div>
             <div>
-                <img src = {movie.image} />
+                <img src = {movie.ImagePath} />
             </div>
+            
             <div>
-                <span>Title: </span>
-                <span>{movie.title}</span>
+              <h4>
+              <span> Title:  </span>
+              <span>{movie.Title}</span>
+              </h4>
             </div>
+            
             <div>
-                <span>Description: </span>
-                <span>{movie.description}</span>
+              <span> <b> Description: </b></span> 
+              <span>{movie.Description}</span>
             </div>
+            
+            <br/>
+            
             <div>
-                <span>Genre: </span>
-                <span>{movie.genre}</span>
+                <span> <b> Genre: </b></span>
+                <span>{movie.Genre.Name}</span>
             </div>
+          
             <div>
-                <span>Director: </span>
-                <span>{movie.director}</span>
+                <span> <b> Genre-Description: </b></span>
+                <span>{movie.Genre.Description}</span>
             </div>
-
+            
+            <br/>
+            
+            <div>
+                <span> <b> Director: </b></span>
+                <span>{movie.Director.Name}</span>
+            </div>
+        
+            <div>
+                <span> <b> Bio: </b></span>
+                <span> {movie.Director.Bio} </span>
+            </div>
+            
+            <div>
+                <span> <b> Birthyear: </b></span>
+                <span> {movie.Director.Birth} </span>
+            </div>
+            
+            <br/>
+            
             <button onClick = {onBackClick}> Back </button>
             
         </div>
     );
-};
+  };
