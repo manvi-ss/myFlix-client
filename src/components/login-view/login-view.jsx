@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -10,14 +12,14 @@ export const LoginView = ({ onLoggedIn }) => {
 
     const data = {
       Username: username,
-      Password: password
+      Password: password,
     };
     fetch("https://movie-api-movieflix.onrender.com/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -35,28 +37,33 @@ export const LoginView = ({ onLoggedIn }) => {
       });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
+    <Form onSubmit={handleSubmit}>
+      <h3>Login</h3>
+      <Form.Group controlId="formUsername">
+        <Form.Label>Username: </Form.Label>
+        <Form.Control
           type="text"
-          maxLength="20"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          placeholder="Enter a Username"
+          minLength="3"
         />
-      </label>
-      <label>
-        Password:
-        <input
+      </Form.Group>
+      <Form.Group controlId="formPassword">
+        <Form.Label> Password: </Form.Label>
+        <Form.Control
           type="password"
-          maxLength="20"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          minLength="3"
+          placeholder="Enter your Password"
         />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+      </Form.Group>
+      <Button variant="primary" type="submit" className="mt-2">
+        Submit
+      </Button>
+    </Form>
   );
 };
