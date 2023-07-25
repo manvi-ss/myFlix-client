@@ -37,7 +37,7 @@ export const SignupView = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className="border border-3 rounded px-5 py-4">
       <h3> Sign Up </h3>
       <Form.Group controlId="formUsername">
         <Form.Label> Username: </Form.Label>
@@ -77,7 +77,7 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-      <Button variant="primary" type="submit" className="mt-2">
+      <Button variant="primary" type="submit" className="mt-3">
         Submit
       </Button>
     </Form>
