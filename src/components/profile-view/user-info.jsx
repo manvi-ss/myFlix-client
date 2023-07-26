@@ -23,6 +23,7 @@ export const UserInfo = ({ user, token, onLoggedOut }) => {
         }
       })
       .catch((e) => {
+        console.error(e);
         alert(e);
       });
   };
@@ -45,7 +46,13 @@ export const UserInfo = ({ user, token, onLoggedOut }) => {
           <Modal.Title>Are you sure you want to delete account?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button variant="danger" onClick={deleteAccount}>
+          <Button
+            variant="danger"
+            type="submit"
+            onClick={() => {
+              deleteAccount();
+            }}
+          >
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>
