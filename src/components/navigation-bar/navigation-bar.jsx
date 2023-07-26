@@ -5,7 +5,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand to="/">myFlix</Navbar.Brand>
+        <Navbar.Brand to="/">Movies</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
