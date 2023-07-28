@@ -73,7 +73,7 @@ export const MainView = () => {
           />
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center mt-4">
         <Routes>
           <Route
             path="/signup"
